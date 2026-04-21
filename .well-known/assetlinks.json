@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.music.music",
+      "sha256_cert_fingerprints": [
+        "1A:86:B8:B7:98:02:84:9D:51:0C:59:4F:34:B6:85:29:D8:AE:3E:00:FF:B2:14:8E:8D:93:57:E4:D9:29:7C:B9"
+      ]
+    }
+  }
+]
