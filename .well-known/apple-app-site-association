@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "243D324TCP.com.ymcoding.hypno.HypnoApp",
+        "paths": ["/open*", "/open"]
+      }
+    ]
+  }
+}
