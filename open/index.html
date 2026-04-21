@@ -6,18 +6,22 @@
 </head>
 <body>
 <script>
-  const params = window.location.search;
-  const isAndroid = /Android/i.test(navigator.userAgent);
   const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page") || "home";
 
-  // Tente d'ouvrir l'app
-  window.location.href = "luneya://home" + params;
+  // Pages supportées
+  const validPages = ["home", "meditation", "journal", "ambient", "story", "search", "account", "pomodoro"];
+  const destination = validPages.includes(page) ? page : "home";
 
-  // Fallback store si l'app n'est pas installée
+  window.location.href = "luneya://" + destination;
+
   setTimeout(function() {
     if (isIos) {
       window.location.href = "https://apps.apple.com/app/id6741454068";
-    } else {
+    } else if (isAndroid) {
       window.location.href = "https://play.google.com/store/apps/details?id=com.ymcoding.hypno";
     }
   }, 1500);
