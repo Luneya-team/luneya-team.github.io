@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Luneya</title>
+</head>
+<body>
+<script>
+  const params = window.location.search;
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  // Tente d'ouvrir l'app
+  window.location.href = "luneya://home" + params;
+
+  // Fallback store si l'app n'est pas installée
+  setTimeout(function() {
+    if (isIos) {
+      window.location.href = "https://apps.apple.com/app/id6741454068";
+    } else {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.ymcoding.hypno";
+    }
+  }, 1500);
+</script>
+</body>
+</html>
