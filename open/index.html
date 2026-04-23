@@ -8,15 +8,25 @@
 <script>
   const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
   const isAndroid = /Android/i.test(navigator.userAgent);
-  
+
   const params = new URLSearchParams(window.location.search);
   const page = params.get("page") || "home";
+  const source = params.get("utm_source") || "";
+  const medium = params.get("utm_medium") || "";
+  const campaign = params.get("utm_campaign") || "";
 
-  // Pages supportées
   const validPages = ["home", "meditation", "journal", "ambient", "story", "search", "account", "pomodoro"];
   const destination = validPages.includes(page) ? page : "home";
 
-  window.location.href = "luneya://" + destination;
+  // Construit le deep link avec les UTM
+  let deepLink = "luneya://" + destination;
+  const utmParams = [];
+  if (source) utmParams.push("utm_source=" + source);
+  if (medium) utmParams.push("utm_medium=" + medium);
+  if (campaign) utmParams.push("utm_campaign=" + campaign);
+  if (utmParams.length > 0) deepLink += "?" + utmParams.join("&");
+
+  window.location.href = deepLink;
 
   setTimeout(function() {
     if (isIos) {
