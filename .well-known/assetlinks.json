@@ -1,11 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.ymcoding.hypno",
       "sha256_cert_fingerprints": [
-        "1A:86:B8:B7:98:02:84:9D:51:0C:59:4F:34:B6:85:29:D8:AE:3E:00:FF:B2:14:8E:8D:93:57:E4:D9:29:7C:B9"
+        "1A:86:B8:B7:98:02:84:9D:51:0C:59:4F:34:B6:85:29:D8:AE:3E:00:FF:B2:14:8E:8D:93:57:E4:D9:29:7C:B9",
+        "57:BA:E0:0F:B4:99:03:CB:8F:94:B3:1B:C4:76:5D:FE:90:7D:A8:07:59:93:9C:82:0F:5E:98:27:80:88:F7:82"
       ]
     }
   }
