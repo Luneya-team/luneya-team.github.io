@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Télécharger Luneya</title>
+  <script>
+    // Lien de la bio TikTok : envoie chaque téléphone vers son store, avec l'étiquette « tiktok ».
+    var APPLE = "https://apps.apple.com/app/apple-store/id6755891783?pt=128297079&ct=tiktok-bio&mt=8";
+    var GOOGLE = "https://play.google.com/store/apps/details?id=com.ymcoding.hypno&referrer=utm_source%3Dtiktok%26utm_medium%3Dbio%26utm_campaign%3Dtiktok-bio";
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/i.test(ua);
+    if (isIOS) { location.replace(APPLE); }
+    else if (isAndroid) { location.replace(GOOGLE); }
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 32px 16px;
+      background: radial-gradient(ellipse at 50% 35%, #3b2675 0%, #1c1238 55%, #120b26 100%);
+      color: #fff; text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+    }
+    main { width: 100%; max-width: 360px; }
+    img { width: 84px; height: auto; filter: drop-shadow(0 0 18px rgba(170, 140, 255, .6)); }
+    h1 { margin: 14px 0 6px; font-size: 34px; letter-spacing: .3px; }
+    p { margin: 0 0 28px; color: #d9ccff; font-size: 16px; line-height: 1.45; }
+    a.store {
+      display: block; margin: 12px 0; padding: 15px 18px; border-radius: 14px;
+      background: #fff; color: #1c1238; font-weight: 700; font-size: 17px; text-decoration: none;
+    }
+    a.store.secondary { background: rgba(255, 255, 255, .1); color: #fff; border: 1px solid rgba(255, 255, 255, .28); }
+    small { display: block; margin-top: 22px; color: rgba(255, 255, 255, .55); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="logo.png" alt="Luneya">
+    <h1>Luneya</h1>
+    <p>Méditations guidées, histoires pour t’endormir et sons d’ambiance.</p>
+    <a class="store" href="https://apps.apple.com/app/apple-store/id6755891783?pt=128297079&ct=tiktok-bio&mt=8">Télécharger sur l’App Store</a>
+    <a class="store secondary" href="https://play.google.com/store/apps/details?id=com.ymcoding.hypno&referrer=utm_source%3Dtiktok%26utm_medium%3Dbio%26utm_campaign%3Dtiktok-bio">Disponible sur Google Play</a>
+    <small>Sur téléphone, la page s’ouvre directement dans le bon store.</small>
+  </main>
+</body>
+</html>
